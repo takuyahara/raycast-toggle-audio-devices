@@ -17,7 +17,7 @@
   "preferences": [
     {
       "name": "hdmi",
-      "required": true,
+      "required": false,
       "description": "Exclude HDMI devices from toggling.",
       "label": "Exclude HDMI devices",
       "type": "checkbox",
