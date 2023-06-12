@@ -1,101 +1,48 @@
 {
-  "name": "audio-device",
-  "title": "Set Audio Device",
-  "description": "Switch the active audio device of your mac.",
+  "name": "toggle-audio-device",
+  "title": "Toggle Audio Device",
+  "description": "Toggle the active audio output device of your mac.",
   "icon": "command-icon.png",
-  "author": "benvp",
-  "contributors": [
-    "mathieudutour",
-    "mike182uk",
-    "FezVrasta",
-    "rcruzper"
-  ],
+  "author": "takuyahara",
   "license": "MIT",
   "commands": [
     {
-      "name": "set-output-device",
-      "title": "Set Output Device",
-      "subtitle": "Audio Device",
-      "description": "Sets the active audio output device.",
-      "mode": "view"
-    },
-    {
-      "name": "set-input-device",
-      "title": "Set Input Device",
-      "subtitle": "Audio Device",
-      "description": "Sets the active audio input device.",
-      "mode": "view"
-    },
-    {
-      "name": "favourite",
-      "title": "Set Output Device to Favourite",
-      "subtitle": "Audio Device",
-      "description": "Sets the active audio output device to the favourite specified in the preferences",
-      "mode": "no-view"
-    },
-    {
-      "name": "toggle-favourites",
-      "title": "Toggle Favourites",
-      "subtitle": "Audio Device",
-      "description": "Toggle the active audio output device between the favourites specified in the preferences",
+      "name": "toggle-audio-device",
+      "title": "Toggle Audio Device",
+      "subtitle": "Toggle Audio Device",
+      "description": "Toggle the active audio output device",
       "mode": "no-view"
     }
   ],
   "preferences": [
     {
-      "name": "airplay",
-      "required": false,
-      "title": "Enable AirPlay Support",
-      "description": "Enable AirPlay speakers detection on the output devices list.",
-      "label": "Include AirPlay devices",
+      "name": "hdmi",
+      "required": true,
+      "description": "Exclude HDMI devices from toggling.",
+      "label": "Exclude HDMI devices",
       "type": "checkbox",
       "default": false
-    },
-    {
-      "name": "systemOutput",
-      "required": false,
-      "title": "Play sound effects through current output",
-      "description": "Play system sounds through current output.",
-      "label": "Update system sounds output",
-      "type": "checkbox",
-      "default": false
-    },
-    {
-      "name": "favourite",
-      "required": false,
-      "title": "Favourite Output Device",
-      "description": "The name, as found in the output device list, of the output device to use as the first favourite",
-      "type": "textfield",
-      "default": ""
-    },
-    {
-      "name": "favourite2",
-      "required": false,
-      "title": "Favourite Output Device 2",
-      "description": "The name, as found in the output device list, of the output device to use as the second favourite",
-      "type": "textfield",
-      "default": ""
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.46.0",
-    "execa": "^6.0.0",
+    "@raycast/api": "^1.53.2",
+    "execa": "^7.1.1",
     "@spotxyz/macos-audio-devices": "1.5.0",
-    "react-use": "^17.3.2",
-    "run-applescript": "^6.0.0"
+    "react-use": "^17.4.0",
+    "run-applescript": "^6.1.0"
   },
   "devDependencies": {
-    "@types/node": "~16.10.0",
-    "@types/react": "^17.0.28",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "typescript": "^4.4.3"
+    "@types/node": "~20.3.0",
+    "@types/react": "^18.2.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "typescript": "^5.1.3"
   },
   "scripts": {
     "copy-binary": "cp node_modules/@spotxyz/macos-audio-devices/audio-devices assets/audio-devices",
-    "build": "npm run copy-binary && ray build -e dist",
+    "build": "npm run copy-binary && ray build -e dist -o dist",
     "dev": "npm run copy-binary && ray develop"
   }
 }
