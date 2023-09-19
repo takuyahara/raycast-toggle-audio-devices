@@ -16,12 +16,12 @@
   ],
   "preferences": [
     {
-      "name": "hdmi",
-      "required": false,
-      "description": "Exclude HDMI devices from toggling.",
-      "label": "Exclude HDMI devices",
+      "name": "builtinOnly",
+      "required": true,
+      "description": "Exclude non-builtin devices",
+      "label": "Builtin devices only",
       "type": "checkbox",
-      "default": false
+      "default": true
     }
   ],
   "dependencies": {
@@ -42,7 +42,7 @@
   },
   "scripts": {
     "copy-binary": "cp node_modules/@spotxyz/macos-audio-devices/audio-devices assets/audio-devices",
-    "build": "npm run copy-binary && ray build -e dist -o dist",
-    "dev": "npm run copy-binary && ray develop"
+    "build": "ray build -e dist -o dist",
+    "dev": "ray develop"
   }
 }

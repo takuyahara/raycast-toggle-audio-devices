@@ -2,12 +2,12 @@ import { getPreferenceValues, showHUD } from "@raycast/api";
 import { getDefaultOutputDevice, getOutputDevices, setDefaultOutputDevice } from "./audio-device";
 
 export default async () => {
-  const { hdmi } = getPreferenceValues<Preferences>();
+  const { builtinOnly } = getPreferenceValues<Preferences>();
   const current = await getDefaultOutputDevice();
   const allDevices = await getOutputDevices();
   const devices = allDevices.filter((d) => {
-    if (hdmi) {
-      return d.transportType !== "hdmi";
+    if (builtinOnly) {
+      return d.transportType === "builtin";
     }
     return true;
   });

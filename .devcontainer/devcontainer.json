@@ -1,9 +1,9 @@
 {
   "name": "[Raycast] Toggle Audio Device",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-20",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
   "customizations": {
     "vscode": {
-      "extensions": ["tonka3000.raycast", "esbenp.prettier-vscode", "github.vscode-github-actions"]
+      "extensions": ["tonka3000.raycast", "esbenp.prettier-vscode"]
     }
   },
   "postCreateCommand": "/bin/sh .devcontainer/postCreateCommand.sh"
